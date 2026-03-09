@@ -26,4 +26,12 @@ sugar_levels=[1,2,3,4,5,6]
 print(f"maximum sugar level:{max(sugar_levels)}")
 print(f"maximum sugar level:{min(sugar_levels)}")
 
+#Operators Overloading
+first_half=["water","milk"]
+second_half=["tea", "sugar"]
+
+final=first_half+second_half
+print(f"final ingredients:{final}")
   
+strong_brew=final*3
+print(strong_brew)
