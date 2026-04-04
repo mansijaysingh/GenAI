@@ -1,0 +1,114 @@
+🎯 INTERVIEW READY EXPLANATION
+❓ Q: What is RAG?
+
+👉 Answer (perfect):
+
+RAG (Retrieval Augmented Generation) is a technique where we enhance LLM responses by retrieving relevant information from external data sources and then generating answers based on that retrieved context.
+
+
+❓ Q: Why do we use RAG?
+
+👉 Answer:
+
+LLMs have limited knowledge (training data tak)
+Cannot access real-time or private data
+RAG allows:
+✅ Up-to-date info
+✅ Custom data (PDF, docs)
+✅ More accurate answers
+
+
+❓ Q: What are chunks?
+
+👉 Answer:
+
+Chunking is the process of splitting large documents into smaller, manageable pieces so that they can be efficiently processed and retrieved.
+
+👉 Add this line (impress karega):
+
+It improves retrieval accuracy and reduces context size for LLMs.
+
+❓ Q: What are embeddings?
+
+👉 Answer:
+
+Embeddings are numerical vector representations of text that capture semantic meaning, allowing similarity comparison between different pieces of text.
+
+👉 Bonus line:
+
+Similar texts have similar embeddings in vector space.
+
+❓ Q: What is a Vector Database?
+
+👉 Answer:
+
+A vector database stores embeddings and allows efficient similarity search to retrieve the most relevant data based on user queries.
+
+👉 Examples:
+
+FAISS
+Chroma
+
+
+🔁RAG FLOW
+Load documents
+Split into chunks
+Convert chunks into embeddings
+Store embeddings in vector database
+Convert user query into embedding
+Retrieve similar chunks
+Pass chunks + query to LLM
+Generate final answer
+
+
+❓ Difference between RAG and Fine-tuning?
+
+👉 Answer:
+
+RAG	Fine-tuning
+External data use karta hai	Model ko retrain karta hai
+Fast & cheap	Expensive
+Dynamic data	Static knowledge
+❓ What is similarity search?
+
+👉 Answer:
+
+It is the process of finding vectors that are closest to a given query vector using distance metrics like cosine similarity.
+
+
+📝 READY NOTES
+
+🔹 RAG (Retrieval Augmented Generation)
+- Combines retrieval + generation
+- Used to enhance LLM responses with external data
+
+🔹 Steps:
+1. Document loading
+2. Chunking
+3. Embeddings
+4. Vector DB storage
+5. Query embedding
+6. Retrieval
+7. LLM response
+
+🔹 Chunking:
+- Splitting large text into smaller parts
+- Improves retrieval accuracy
+
+🔹 Embeddings:
+- Text → vector representation
+- Captures semantic meaning
+
+🔹 Vector Database:
+- Stores embeddings
+- Performs similarity search
+- Examples: FAISS, Chroma
+
+🔹 Advantages:
+- Real-time data access
+- Custom knowledge
+- Better accuracy
+
+🔹 RAG vs Fine-tuning:
+- RAG = external retrieval
+- Fine-tuning = model training
