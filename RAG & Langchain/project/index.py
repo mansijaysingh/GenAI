@@ -32,7 +32,7 @@ vectore_store=QdrantVectorStore.from_documents(
   documents=chunks,
   embedding=embedding_model,
   url="http://localhost:6333",
-  collection_name="learning-collection"
+  collection_name="learning-Rag"
 )
 
 print("Indexing of documents is completed")
