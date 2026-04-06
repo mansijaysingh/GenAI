@@ -1,5 +1,6 @@
-from redis import Redis
+from redis import asyncio
+import redis
 from rq import Queue
 
-queue=Queue(connection=Redis(host='localhost', port=6379))
+queue=Queue(connection=redis.asyncio.Redis(host='localhost', port=6379))
 
