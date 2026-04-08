@@ -3,25 +3,57 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_openai import ChatOpenAI
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+embeddings=OpenAIEmbeddings(
+	api_key=os.getenv("OPENAI_API_KEY")
+)
+
 
 def create_rag_pipeline(file_path):
-	#Load PDF
+	db_path="faiss_db"
+
+	if os.path.exists(db_path):
+		db=FAISS.load_local(
+			db_path,
+			embeddings,
+			allow_dangerous_deserialization=True
+		)
+		return db
+	
 	loader=PyPDFLoader(file_path)
 	documents=loader.load()
-	
-  #Chunking
-	splitter=RecursiveCharacterTextSplitter(
-		chunk_size=500,
-		chunk_overlap=50
-  )
+	splitter=RecursiveCharacterTextSplitter(chunk_size=500,chunk_overlap=50)
 	docs=splitter.split_documents(documents)
-	
-  #Embeddings
-	embeddings=OpenAIEmbeddings()
-  
-  #Vector db
 	db=FAISS.from_documents(docs,embeddings)
+	
+	db.save_local(db_path)
+
 	return db
+
+
+
+# def create_rag_pipeline(file_path):
+# 	#Load PDF
+# 	loader=PyPDFLoader(file_path)
+# 	documents=loader.load()
+	
+#   #Chunking
+# 	splitter=RecursiveCharacterTextSplitter(
+# 		chunk_size=500,
+# 		chunk_overlap=50
+#   )
+# 	docs=splitter.split_documents(documents)
+	
+#   #Embeddings
+# 	embeddings=OpenAIEmbeddings()
+  
+#   #Vector db
+# 	db=FAISS.from_documents(docs,embeddings)
+# 	return db
   
 
 def ask_questions(db, query):
