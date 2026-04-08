@@ -41,7 +41,20 @@ if query and st.session_state.db:
   st.chat_message("user").write(query)
 
   #AI answer
-  answer=ask_questions(st.session_state.db,query)
+  chat_history = ""
+  for msg in st.session_state.messages[-3:]:
+     chat_history += f"{msg['role']}: {msg['content']}\n"
+
+  final_query = f"""
+  Chat History:
+  {chat_history}
+
+  Current Question:
+  {query}
+"""
+
+  answer = ask_questions(st.session_state.db, final_query)
+  
   st.session_state.messages.append({"role": "assistant", "content":answer})
   st.chat_message("assistant").write(answer)
 
