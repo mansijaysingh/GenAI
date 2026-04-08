@@ -56,12 +56,37 @@ def create_rag_pipeline(file_path):
 # 	return db
   
 
-def ask_questions(db, query):
-	#Retrieval
-	docs=db.similarity_search(query,k=3)
-	context="\n".join([doc.page_content for doc in docs])
+# def ask_questions(db, query):
+# 	#Retrieval
+# 	docs=db.similarity_search(query,k=3)
+# 	context="\n".join([doc.page_content for doc in docs])
 	
-  #LLM
-	llm=ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
-	response=llm.invoke(f"Answer based on this: \n{context}\n\nQuestion: {query}")
-	return response.content
+#   #LLM
+# 	llm=ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
+# 	response=llm.invoke(f"Answer based on this: \n{context}\n\nQuestion: {query}")
+# 	return response.content
+
+
+
+
+def ask_question(db, query):
+    docs = db.similarity_search(query, k=3)
+
+    context = "\n".join([doc.page_content for doc in docs])
+
+    prompt = f"""
+    You are a helpful assistant. Answer ONLY from given context. If answer not found, say "Not Found in document"
+    context:
+    {context}
+
+    Question: {query}
+    """
+
+    llm = ChatOpenAI(
+        model="gpt-4o-mini",
+        api_key=os.getenv("OPENAI_API_KEY")
+    )
+
+    response = llm.invoke(prompt)
+
+    return response.content

@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 import streamlit as st
-from rag_pipeline import create_rag_pipeline, ask_questions
+from rag_pipeline import create_rag_pipeline, ask_question
 
 
 
@@ -53,7 +53,7 @@ if query and st.session_state.db:
   {query}
 """
 
-  answer = ask_questions(st.session_state.db, final_query)
+  answer = ask_question(st.session_state.db, final_query)
   
   st.session_state.messages.append({"role": "assistant", "content":answer})
   st.chat_message("assistant").write(answer)
