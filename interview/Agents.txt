@@ -1,0 +1,86 @@
+🧠 Agent
+“Agent = LLM + decision making + tools use karne ki ability”
+
+FLOW
+
+User Question
+     ↓
+LLM (Agent brain 🧠)
+     ↓
+Decide → kaunsa tool use karna hai
+     ↓
+Tool run hota hai
+     ↓
+Result wapas LLM ko
+     ↓
+Final Answer
+
+
+🧩 Agent ke MAIN COMPONENTS
+
+1️⃣ LLM (Brain)
+
+👉 decision leta hai
+
+2️⃣ Tools (Hands 🛠️)
+
+👉 jo kaam karte hain:
+
+search
+calculator
+API
+database
+3️⃣ Agent Executor
+
+👉 actual flow run karta hai
+
+4️⃣ Prompt (Instructions)
+
+👉 batata hai:
+
+kaise decide karna hai
+kaunsa tool kab use karna hai
+
+🔥 Types of Agents (INTERVIEW)
+
+
+1️⃣ Zero-shot Agent
+
+👉 description deke kaam chal jata hai
+
+2️⃣ ReAct Agent (MOST IMPORTANT 🔥)
+
+👉 Reason + Act
+👉 sochta hai + action leta hai
+
+3️⃣ Conversational Agent
+
+👉 memory ke sath
+
+💥 Agent vs Chain
+
+| Chain           | Agent          |
+| --------------- | -------------- |
+| fixed steps     | dynamic steps  |
+| predefined flow | decision based |
+| simple          | intelligent    |
+
+
+🔥 Agent vs RAG
+
+| RAG           | Agent          |
+| ------------- | -------------- |
+| retrieve data | decide actions |
+| static flow   | dynamic        |
+| PDF QnA       | tool usage     |
+
+🧠 MASTER ANSWER (INTERVIEW)
+
+“Agents are LLM-powered systems that can dynamically decide which actions to take and which tools to use in order to solve a task, unlike static chains.”
+
+
+🚀 REAL USE CASES
+AI assistant (ChatGPT type)
+Auto research tool
+Customer support bot
+Data analysis bot

@@ -1,0 +1,85 @@
+🧠 🟢 BASIC LEVEL
+RAG kya hota hai?
+RAG ka full form kya hai?
+RAG kyu use karte hain?
+LLM directly use karne se problem kya hoti hai?
+RAG hallucination kaise reduce karta hai?
+RAG ka simple workflow explain karo
+Retrieval aur Generation me kya difference hai?
+Context kya hota hai RAG me?
+Vector database kya hota hai?
+FAISS kya hai?
+
+🧩 🟡 COMPONENT BASED QUESTIONS
+
+🔹 Chunking
+Chunking kya hota hai?
+Chunk size ka kya impact hota hai?
+Chunk overlap kyu use karte hain?
+Agar chunking galat ho to kya problem hogi?
+🔹 Embeddings
+Embeddings kya hoti hain?
+Text ko numbers me convert kyu karte hain?
+Similarity search kaise kaam karta hai?
+Cosine similarity kya hoti hai?
+Agar embeddings wrong ho to kya issue aayega?
+🔹 Vector DB
+Vector DB kya hota hai?
+FAISS kaise kaam karta hai?
+FAISS vs traditional database
+Indexing kya hoti hai?
+Kya hum SQL DB use kar sakte hain RAG me?
+🔹 Retriever
+Retriever kya hota hai?
+top_k kya hota hai?
+zyada k lene ka kya effect hai?
+Retriever vs search engine
+Agar retriever galat data de to kya hoga?
+
+⚙️ 🔵 INTERMEDIATE LEVEL
+RAG ka complete pipeline explain karo
+RAG vs Fine-tuning
+Kab RAG use karna chahiye aur kab nahi?
+RAG ke advantages kya hain?
+RAG ke disadvantages kya hain?
+Real-world use cases batao
+Prompt ka kya role hai RAG me?
+Context window kya hota hai?
+Agar answer document me nahi hai to kya karna chahiye?
+
+🔥 🔴 ADVANCED LEVEL (INTERNSHIP CRACKERS)
+RAG me accuracy kaise improve karte hain?
+Chunk size optimize kaise karte ho?
+Retrieval quality improve kaise karte ho?
+Hybrid search kya hota hai?
+Re-ranking kya hota hai?
+Multi-query retrieval kya hota hai?
+Metadata filtering kya hota hai?
+Latency kaise reduce karte ho?
+Scaling kaise karoge RAG system ko?
+Caching ka use kaha hota hai?
+
+💻 🟣 PRACTICAL / CODING QUESTIONS
+RAG project ka structure kya tha tumhara?
+Tumne kaun sa embedding model use kiya?
+Kaun sa vector DB use kiya aur kyu?
+Tumne chunk size kitna liya aur kyu?
+Agar output galat aa raha ho to debug kaise karoge?
+Tumhara project ka biggest challenge kya tha?
+Same PDF issue kaise solve kiya? (🔥 tujhse pakka puchhenge)
+Streamlit me state manage kaise kiya?
+API key secure kaise ki?
+Deployment kaise karoge?
+🧠 🟤 SCENARIO BASED QUESTIONS (VERY IMPORTANT)
+Agar model “Not found” bol raha hai but answer present hai to kya karoge?
+Agar irrelevant answers aa rahe hain to kya fix karoge?
+Agar bahut slow ho raha hai to optimize kaise karoge?
+Agar multiple PDFs handle karni ho to kya approach loge?
+Agar data daily update hota hai to kaise manage karoge?
+Agar hallucination ho rahi hai to kaise reduce karoge?
+💥 🔥 HR + PROJECT LINKED QUESTIONS
+Tumne RAG project kyu banaya?
+Isme sabse interesting kya laga?
+Agar time mile to kya improve karoge?
+Industry me iska use kaha hota hai?
+Isko production level pe kaise le jaoge?
