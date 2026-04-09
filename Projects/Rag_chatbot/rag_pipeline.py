@@ -26,8 +26,10 @@ def create_rag_pipeline(file_path):
 	
 	loader=PyPDFLoader(file_path)
 	documents=loader.load()
+	print("total documents:", len(documents))
 	splitter=RecursiveCharacterTextSplitter(chunk_size=500,chunk_overlap=50)
 	docs=splitter.split_documents(documents)
+	print("total chunks:", len(docs))
 	db=FAISS.from_documents(docs,embeddings)
 	
 	db.save_local(db_path)
@@ -72,11 +74,20 @@ def create_rag_pipeline(file_path):
 def ask_question(db, query):
     docs = db.similarity_search(query, k=3)
 
+    print("RETRIEVED DOCS:", len(docs))
+
+    for d in docs:
+        print("----")
+        print(d.page_content[:200])
+
     context = "\n".join([doc.page_content for doc in docs])
 
+    if not context.strip():
+        return "PDF se context nahi mil raha 😅"
+
     prompt = f"""
-    You are a helpful assistant. Answer ONLY from given context. If answer not found, say "Not Found in document"
-    context:
+    Answer ONLY from this context:
+
     {context}
 
     Question: {query}

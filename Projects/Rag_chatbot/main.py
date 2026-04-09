@@ -19,16 +19,31 @@ if "db" not in st.session_state:
   st.session_state.db=None
 
 #Upload file
-uploaded_file=st.file_uploader("Upload your PDF📄")
+uploaded_file = st.file_uploader("Upload PDF", type="pdf")
 
-if uploaded_file:
-  if st.session_state.db is None:
-    with open ("temp.pdf", "wb") as f:
-      f.write(uploaded_file.read())
+if uploaded_file is not None:
+    # 👉 file change detect karne ke liye
+    if "last_uploaded" not in st.session_state or st.session_state.last_uploaded != uploaded_file.name:
+        
+        # 🔥 RESET EVERYTHING
+        st.session_state.messages = []
+        st.session_state.db = None
 
-    st.session_state.db = create_rag_pipeline("temp.pdf")
-    st.success("PDF Processed✅")
+        import shutil
+        import os
+        if os.path.exists("faiss_db"):
+            shutil.rmtree("faiss_db")
 
+        # 👉 new file save
+        with open("temp.pdf", "wb") as f:
+            f.write(uploaded_file.read())
+
+        # 👉 new DB create
+        st.session_state.db = create_rag_pipeline("temp.pdf")
+
+        st.session_state.last_uploaded = uploaded_file.name
+
+        st.success("New PDF processed ✅")
 #Show old chat
 for msg in st.session_state.messages:
 
