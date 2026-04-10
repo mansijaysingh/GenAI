@@ -1,36 +1,53 @@
 from langchain_openai import ChatOpenAI
 from langchain_classic.agents import initialize_agent
-from langchain_classic.agents import AgentExecutor
 from langchain_classic.tools import Tool
 from langchain_classic.memory import ConversationBufferMemory
+# from langchain_core.prompts import MessagesPlaceholder
 from dotenv import load_dotenv
-import datetime
+from datetime import datetime
 
 load_dotenv()
 
-llm=ChatOpenAI()
+llm=ChatOpenAI(model="gpt-4o-mini")
 
 def calculator(input):
-  return str(eval(input))
+  try:
+    return str(eval(input))
+  except:
+    return "Invalid math expression"
+
+def time_tool(_):
+  now = datetime.now()
+  return f"Current date and time is: {now.strftime('%Y-%m-%d %H:%M:%S')}"
 
 tools=[
   Tool(
     name="Calculator",
     func=calculator,
-    description="Useful for when you need to answer questions about math. Input should be a valid mathematical expression."
+    description="ONLY use this tool for mathematical calculations. DO NOT use for normal conservations "
 
+  ),
+  Tool(
+    name="Time",
+    func=time_tool,
+    description="Use this tool to get the current date and time. DO NOT use for normal conservations"
   )
 ]
 
-memory=ConversationBufferMemory()
+memory=ConversationBufferMemory(
+  memory_key='chat_history',
+  return_messages=True
+)
 
 agent=initialize_agent(
-  tools,
-  llm,
-  agent="openai-functions",
+  tools=tools,
+  llm=llm,
+  agent="chat-conversational-react-description",
   memory=memory,
-  verbose=True,
-  handle_parsing_errors=True
+  handle_parsing_errors=True,
+  
+  verbose=True
+  
 )
 
 while True:
