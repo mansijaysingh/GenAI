@@ -1,0 +1,78 @@
+🚀 LangGraph
+LangGraph is a framework built on top of LangChain that allows us to create stateful, controllable workflows for LLM applications using graph-based execution.
+👉 simple version:
+It lets us define how an AI system should think step-by-step instead of letting the agent decide everything randomly.
+
+❌ LangChain issues:
+LangChain agents rely on LLM reasoning, which makes them flexible but less predictable.
+
+LangGraph provides explicit control over the execution flow by defining nodes and edges, making the system more reliable and debuggable
+
+🧠 4. Core Concepts (MOST IMPORTANT)
+🔹 (1) State
+
+👉 sabse important cheez
+
+State is the shared data that flows through all nodes.
+
+👉 example:
+
+user input
+chat history
+intermediate results
+
+👉 interview line:
+
+LangGraph maintains a shared state object that gets updated at each step of the workflow.
+
+🔹 (2) Nodes
+
+👉 nodes = functions
+
+Each node represents a step in the workflow (like LLM call, tool execution, or decision making).
+
+🔹 (3) Edges
+
+👉 edges = connections
+
+Edges define how the flow moves from one node to another.
+
+🧠 5. Flow
+Input → Node → Decision → Next Node → Output
+
+⚔️ 6. LangChain vs LangGraph
+| Feature     | LangChain | LangGraph  |
+| ----------- | --------- | ---------- |
+| Flow        | dynamic   | controlled |
+| Debugging   | hard      | easy       |
+| Reliability | medium    | high       |
+| Structure   | linear    | graph      |
+
+🔥 7. Use Cases
+Multi-step workflows
+Tool orchestration
+Complex agents
+Human-in-the-loop systems
+
+🧠 8. ReAct vs LangGraph
+ReAct:
+LLM decide karta hai
+unpredictable
+LangGraph:
+tu decide karta hai
+controlled execution
+
+💥 9. Why companies prefer LangGraph?
+Because it provides better control, scalability, and reliability for production-grade AI systems.
+
+🎯 10. Simple Example
+For example, in a chatbot, instead of letting the agent randomly decide, we can define a graph where:
+
+input goes to a decision node
+if it's a math query → calculator
+else → LLM response
+This ensures consistent and predictable behavior.
+
+"LangGraph allows us to design structured, stateful, and controllable AI workflows instead of relying on unpredictable agent behavior."
+
+LangGraph internally works like a state machine where each node updates the shared state and transitions are defined explicitly.
