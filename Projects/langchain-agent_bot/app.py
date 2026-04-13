@@ -5,10 +5,19 @@ from langchain_classic.memory import ConversationBufferMemory
 # from langchain_core.prompts import MessagesPlaceholder
 from dotenv import load_dotenv
 from datetime import datetime
+import streamlit as st
 
 load_dotenv()
 
 llm=ChatOpenAI(model="gpt-4o-mini")
+
+if "memory" not in st.session_state:
+  st.session_state.memory=ConversationBufferMemory(
+    memory_key="chat_history",
+    return_messages=True
+  )
+
+memory=st.session_state.memory
 
 def calculator(input):
   try:
@@ -50,11 +59,20 @@ agent=initialize_agent(
   
 )
 
-while True:
-  user_input=input("Enter your question: ")
+# while True:
+#   user_input=input("Enter your question: ")
 
-  if user_input == "exit":
-    break
+#   if user_input == "exit":
+#     break
 
-  reponse=agent.run(user_input)
-  print(f"Agent response: {reponse}")
+#   reponse=agent.run(user_input)
+#   print(f"Agent response: {reponse}")
+
+st.title("🤖 My AI Assistant")
+user_input=st.text_input("Ask Something:")
+
+if user_input:
+    response=agent.run(user_input)
+
+    st.write("🧑 You:", user_input)
+    st.write("🤖 Bot:", response)
