@@ -81,3 +81,41 @@ Memory allows the system to retain past interactions and maintain conversational
 
 🎯 RAG + LANGCHAIN CONNECTION
 “LangChain is commonly used to implement RAG pipelines by handling document loading, chunking, embeddings, and retrieval.”
+
+
+🧠 SECTION 2: Deep Concepts (IMPORTANT)
+
+❓ ReAct framework kya hai?
+
+👉
+Reasoning + Acting
+LLM:
+
+sochta hai (Thought)
+action leta hai (Tool call)
+result use karta hai
+
+❓ Zero-shot agent kya hota hai?
+
+👉 bina training ke, sirf description se tools use karta hai
+
+❓ Different agent types?
+
+👉
+
+zero-shot-react-description
+chat-zero-shot-react-description
+conversational-react-description
+openai-functions
+
+❓ OpenAI Functions agent kya hai?
+
+👉 structured tool calling (JSON based), more reliable than ReAct
+
+❓ Prompt engineering ka role kya hai?
+
+👉 decide karta hai:
+
+LLM ka behavior
+tool usage
+output format
