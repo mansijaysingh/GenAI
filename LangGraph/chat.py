@@ -2,6 +2,16 @@ from typing_extensions import TypedDict
 from typing import Annotated
 from langgraph.graph.message import add_messages
 from langgraph.graph import StateGraph , START, END
+from langchain.chat_models import init_chat_model
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+llm=init_chat_model(
+  model="gpt-3.5-turbo",
+  model_provider="openai"
+)
 
 
 
@@ -11,8 +21,8 @@ class State(TypedDict):
 
 
 def chatbot(state:State):
-  print("\n\nChatbot node called with state:", state)
-  return {"message":["Hi! How can I help you?"]}
+ response=llm.invoke(state.get("message"))
+ return {"message": [response]}
 
 def samplenode(state:State):
   print("\n\nSample node called with state:", state)
