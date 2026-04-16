@@ -1,0 +1,208 @@
+🧠 AI ENGINEERING QUICK REVISION NOTES
+🚀 1. LLM BASICS
+🔹 What is LLM?
+
+Large Language Model that understands and generates human-like text.
+
+🔹 Examples
+GPT-4o
+Gemini
+
+🔹 How it works
+Input → Tokenization → Model → Output
+
+🔹 Limitations
+No real-time data
+Hallucination
+No memory (by default)
+
+📚 2. RAG (Retrieval Augmented Generation)
+🔹 Definition
+
+Combines LLM + external data (documents)
+
+🔹 Flow
+User Query
+   ↓
+Embedding
+   ↓
+Vector DB (retrieve)
+   ↓
+LLM (generate answer)
+
+🔹 Components
+Loader (PDF, text)
+Splitter
+Embeddings
+Vector DB (FAISS)
+Retriever
+LLM
+
+🔹 Advantages
+Accurate answers
+Uses custom data
+Reduces hallucination
+🔹 Interview Line
+
+RAG improves LLM responses by retrieving relevant context from external sources.
+
+🔗 3. LANGCHAIN
+🔹 Definition
+
+Framework to build LLM applications using chains, tools, agents, and memory.
+
+🔹 Core Components
+1. LLM
+
+→ brain
+
+2. Prompt
+
+→ instructions
+
+3. Chain
+
+→ fixed flow
+
+4. Tool
+
+→ external function (calculator, API)
+
+5. Agent
+→ decides what to do
+
+6. Memory
+
+→ stores conversation
+
+🔹 Chain vs Agent
+| Chain       | Agent    |
+| ----------- | -------- |
+| Fixed       | Dynamic  |
+| Predictable | Flexible |
+
+🔹 ReAct
+
+Reasoning + Acting (LLM decides tool usage)
+
+🔹 Common Issues
+Parsing error
+Tool misuse
+Memory not working
+
+🤖 4. AGENTS + TOOLS + MEMORY
+🔹 Agent Flow
+User → Agent → Tool (optional) → Output
+
+🔹 Tools
+
+Functions used by LLM
+
+Example:
+
+Calculator
+Time
+🔹 Memory
+
+Stores chat history
+
+Types:
+
+ConversationBufferMemory
+🔹 Key Rule
+
+Tool description must be clear
+
+🎯 5. YOUR PROJECT (LANGCHAIN)
+🔹 Features
+Calculator tool
+Time tool
+Memory
+Streamlit UI
+
+
+🔹 Interview Line
+
+I built an AI assistant using LangChain with tools, memory, and a Streamlit interface.
+
+🧩 6. LANGGRAPH
+🔹 Definition
+
+Framework for building stateful and controllable workflows using graphs.
+
+🔹 Why LangGraph?
+Control flow
+No randomness
+Better debugging
+
+🔹 Core Concepts
+🔸 State
+
+Shared data between nodes
+
+🔸 Node
+
+Function that processes state
+
+🔸 Edge
+
+Connection between nodes
+
+🔸 Conditional Edge
+
+Decision-based routing
+
+🔹 Flow
+Input → Node → Decision → Node → Output
+
+🔹 LangChain vs LangGraph
+| LangChain     | LangGraph  |
+| ------------- | ---------- |
+| Agent decides | You decide |
+| Unpredictable | Controlled |
+
+🔹 Your Project (LangGraph)
+
+👉 Smart Query Router
+
+Math → calculator
+Normal → LLM
+
+🔹 Interview Line
+
+I implemented a LangGraph-based system with decision nodes to control execution flow.
+
+🧠 7. MULTIMODAL AI
+🔹 Definition
+
+AI that processes multiple data types (text, image, audio)
+
+🔹 Examples
+Image QnA
+Voice assistants
+
+🔹 Interview Line
+
+Multimodal AI enables understanding across different data formats for richer responses.
+
+⚡ 8. IMPORTANT INTERVIEW POINTS
+🔹 RAG vs LangChain
+RAG = technique
+LangChain = framework
+🔹 LangChain vs LangGraph
+LangChain = dynamic
+LangGraph = controlled
+🔹 Biggest Challenges
+Debugging agents
+Tool misuse
+Memory issues
+
+🎯 FINAL SUMMARY
+
+LLM → Base model
+RAG → Knowledge add
+LangChain → Build apps
+Agents → Decision making
+Tools → External power
+Memory → Context
+LangGraph → Control flow
