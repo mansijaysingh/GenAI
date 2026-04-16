@@ -1,0 +1,22 @@
+🚀 Multimodal AI
+🧠 Simple definition
+Multimodal AI enables models to process and understand multiple types of data like text, images, and audio simultaneously for more accurate and context-aware responses.
+
+It’s AI that can see, hear, and read — not just understand text.
+
+🧠 Types of Modalities
+
+👉 modalities = data types
+
+Text 📝
+Image 🖼️
+Audio 🎤
+Video 🎬
+
+Input (image + text)
+        ↓
+Encoder (convert to embeddings)
+        ↓
+LLM / Model process karta hai
+        ↓
+Output (text / image / audio)
