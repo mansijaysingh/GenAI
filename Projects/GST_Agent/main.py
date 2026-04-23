@@ -10,7 +10,7 @@ if not os.path.exists(UPLOAD_DIR):
   os.makedirs(UPLOAD_DIR)
 
 
-@app.post("/upload-bill")
+@app.post("/upload-bill/")
 async def upload_bill(file:UploadFile=File(...)):
   file_location=f"{UPLOAD_DIR}/{file.filename}"
   with open(file_location, "wb+") as file_object:

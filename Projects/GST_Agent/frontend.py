@@ -28,7 +28,7 @@ with col1:
                 try:
                     
                     files = {"file": (uploaded_file.name, uploaded_file.getvalue())}
-                    response = requests.post("http://127.0.0.1:8000/process-gst/", files=files)
+                    response = requests.post("http://127.0.0.1:8000/upload-bill/", files=files)
                     
                     if response.status_code == 200:
                         st.session_state['result'] = response.json()
