@@ -1,0 +1,97 @@
+🎯 LEVEL 1: Core Understanding
+❓ Q1: LangGraph kya hai?
+
+👉 Ideal Answer:
+
+LangGraph ek graph-based orchestration framework hai jo LLM workflows ko nodes aur edges me represent karta hai. Har node ek computation step hota hai aur edges routing define karte hain, jo runtime pe state ke basis par decide hoti hai.
+
+👉 Follow-up (interviewer trap):
+LangChain se better kyu?
+
+👉 Answer:
+
+LangChain linear workflows ke liye suitable hai, jabki LangGraph complex, multi-step aur branching workflows ke liye better hai jahan dynamic decision making required hoti hai.
+
+❓ Q2: State kya hota hai LangGraph me?
+
+👉 Ideal Answer:
+
+State ek shared memory object hota hai jo graph ke har node ke beech data pass karta hai. Ye mutable hota hai aur har node isse read/write kar sakta hai.
+
+👉 Follow-up:
+State important kyu hai?
+
+👉 Answer:
+
+Kyunki bina state ke nodes isolated ho jayenge aur context loss ho jayega. State ensures continuity and context-aware decisions.
+
+🎯 LEVEL 2: Practical Understanding
+❓ Q3: Multi-step graph explain karo example ke saath
+
+👉 Answer:
+
+Multi-step graph me workflow multiple nodes me divide hota hai, jaise A → B → C.
+A input process karta hai, B decision leta hai, aur C output generate karta hai. Har step state update karta hai aur next step routing ke through decide hota hai.
+
+❓ Q4: Routing kaise kaam karti hai?
+
+👉 Ideal Answer:
+
+Routing conditional edges ke through hoti hai jahan ek router function state evaluate karke next node decide karta hai. Ye static nahi hoti, balki runtime pe dynamic hoti hai.
+
+👉 Follow-up:
+LLM ka role routing me?
+
+👉 Answer:
+
+LLM user intent classify karke routing decision me help kar sakta hai, especially complex natural language inputs me.
+
+🎯 LEVEL 3: Deep + Real-world
+❓ Q5: LangGraph me error handling kaise karoge?
+
+👉 Strong Answer:
+
+Error handling ke liye fallback nodes ya alternative paths define kar sakte hain. Agar ek node fail hota hai to graph ko reroute karke recovery path pe bheja ja sakta hai.
+
+❓ Q6: Tum LangGraph kab use karoge?
+
+👉 Answer:
+
+Jab workflow me:
+
+multiple steps ho
+decision branching ho
+memory/state maintain karni ho
+agents ya tools involve ho
+❓ Q7: Simple chatbot vs LangGraph system difference?
+
+👉 Answer:
+
+Simple chatbot stateless ya linear hota hai, jabki LangGraph system stateful, multi-step aur decision-driven hota hai.
+
+🎯 LEVEL 4: Advanced (🔥 recruiter killer)
+❓ Q8: Agar tumhe interview coach banana ho LangGraph me, flow kya hoga?
+
+👉 Answer:
+
+Flow:
+
+Node A → user input (question type)
+Node B → classify (HR / DSA / System Design)
+Node C1/C2/C3 → different question generators
+Node D → evaluate answer
+Node E → feedback generate
+
+👉 Ye ek multi-agent style workflow ban jata hai.
+
+❓ Q9: Scalability kaise handle hoti hai LangGraph me?
+
+👉 Answer:
+
+Modular nodes hone ki wajah se system easily scalable hota hai. Naye nodes add kar sakte hain bina pura flow todhe. Routing logic extendable hota hai.
+
+❓ Q10: LangGraph me biggest advantage kya hai?
+
+👉 Strong Answer:
+
+Sabse bada advantage hai dynamic, stateful aur modular orchestration — jo complex AI systems ko manageable aur scalable banata hai.
